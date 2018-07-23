@@ -1,6 +1,9 @@
 let express = require("express");
 let app = express();
-let io = require("socket.io");
+app.use(express.static("public"));
+let server = app.listen(80);
+
+let io = require("socket.io")(server);
 
 /**
  * a 2D-Vector representation
