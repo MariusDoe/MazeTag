@@ -7,16 +7,7 @@ let io = require("socket.io")(server);
 
 let Vec = require("./Vec");
 let Maze = require("./Maze");
-
-class Game {
-    constructor() {
-        this.players = [];
-    }
-
-    update() {
-
-    }
-}
+let Game = require("./Game");
 
 class Player {
     /**
