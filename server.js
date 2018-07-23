@@ -1,65 +1,11 @@
 let express = require("express");
 let app = express();
-let io = require("socket.io");
+app.use(express.static("public"));
+let server = app.listen(80);
 
-/**
- * a 2D-Vector representation
- */
-class Vec {
-    /**
-     *
-     * @param {number} x
-     * @param {number} y
-     */
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-    }
+let io = require("socket.io")(server);
 
-    add(other) {
-        return new Vec(this.x + other.x, this.y + other.y);
-    }
-
-    sub(other) {
-        return new Vec(this.x - other.x, this.y - other.y);
-    }
-
-    mul(other) {
-        return new Vec(this.x * other.x, this.y * other.y);
-    }
-
-    div(other) {
-        return new Vec(this.x / other.x, this.y / other.y);
-    }
-}
-
-class Game {
-    constructor() {
-        this.players = [];
-    }
-
-    update() {
-
-    }
-}
-
-const PATH = 0;
-const WALL = 1;
-
-
-class Player {
-    /**
-     * creates a Player associated with a Game and a Socket
-     * @param {Game} game
-     * @param {SocketIO.Socket} socket
-     */
-    constructor(game, socket) {
-        this.game = game;
-        this.socket = socket;
-        this.initListeners();
-    }
-
-    initListeners() {
-
-    }
-}
+let Vec = require("./Vec");
+let Maze = require("./Maze");
+let Game = require("./Game");
+let Player = require("./Player");
