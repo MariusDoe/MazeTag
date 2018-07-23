@@ -46,20 +46,6 @@ class Game {
 const PATH = 0;
 const WALL = 1;
 
-class Maze {
-    /**
-     *
-     * @param {Vec} size
-     */
-    constructor(size) {
-        this.size = size;
-        // generate...
-    }
-
-    getCell(pos) {
-        // return PATH / WALL;
-    }
-}
 
 class Player {
     /**
