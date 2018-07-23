@@ -19,11 +19,11 @@ class Maze {
 
     }
     getCell(pos) {
-        return (this.mazeStruckture[pos.x + pos.y * size.x]);
+        return (this.mazeStruckture[pos.x + pos.y * this.size.x]);
         // return PATH / WALL;
     }
     setCell(pos, value) {
-        this.mazeStruckture[pos.x + pos.y * size.x] = value;
+        this.mazeStruckture[pos.x + pos.y * this.size.x] = value;
     }
 }
 Maze.WALL = 0;
@@ -32,6 +32,6 @@ Maze.INTERSECTION = 2;
 
 testMaze = new Maze(new Vec(5, 5));
 
-
+console.log(testMaze.getCell(0, 0));
 
 module.exports = Maze;
