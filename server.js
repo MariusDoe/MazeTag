@@ -1,7 +1,16 @@
 let express = require("express");
 let app = express();
+let io = require("socket.io");
 
+/**
+ * a 2D-Vector representation
+ */
 class Vec {
+    /**
+     *
+     * @param {number} x
+     * @param {number} y
+     */
     constructor(x, y) {
         this.x = x;
         this.y = y;
@@ -38,6 +47,10 @@ const PATH = 0;
 const WALL = 1;
 
 class Maze {
+    /**
+     *
+     * @param {Vec} size
+     */
     constructor(size) {
         this.size = size;
         // generate...
@@ -49,6 +62,11 @@ class Maze {
 }
 
 class Player {
+    /**
+     * creates a Player associated with a Game and a Socket
+     * @param {Game} game
+     * @param {SocketIO.Socket} socket
+     */
     constructor(game, socket) {
         this.game = game;
         this.socket = socket;
