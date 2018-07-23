@@ -5,36 +5,7 @@ let server = app.listen(80);
 
 let io = require("socket.io")(server);
 
-/**
- * a 2D-Vector representation
- */
-class Vec {
-    /**
-     *
-     * @param {number} x
-     * @param {number} y
-     */
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    add(other) {
-        return new Vec(this.x + other.x, this.y + other.y);
-    }
-
-    sub(other) {
-        return new Vec(this.x - other.x, this.y - other.y);
-    }
-
-    mul(other) {
-        return new Vec(this.x * other.x, this.y * other.y);
-    }
-
-    div(other) {
-        return new Vec(this.x / other.x, this.y / other.y);
-    }
-}
+let Vec = require("./Vec");
 
 class Game {
     constructor() {
