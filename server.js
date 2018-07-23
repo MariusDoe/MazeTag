@@ -1,7 +1,7 @@
 let express = require("express");
 let app = express();
 app.use(express.static("public"));
-let server = app.listen(80, () => {
+let server = app.listen(8080, () => {
     console.log("Server listening on " + server.address())
 });
 
