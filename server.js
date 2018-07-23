@@ -6,6 +6,7 @@ let server = app.listen(80);
 let io = require("socket.io")(server);
 
 let Vec = require("./Vec");
+let Maze = require("./Maze");
 
 class Game {
     constructor() {
@@ -14,24 +15,6 @@ class Game {
 
     update() {
 
-    }
-}
-
-const PATH = 0;
-const WALL = 1;
-
-class Maze {
-    /**
-     *
-     * @param {Vec} size
-     */
-    constructor(size) {
-        this.size = size;
-        // generate...
-    }
-
-    getCell(pos) {
-        // return PATH / WALL;
     }
 }
 
