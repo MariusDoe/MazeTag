@@ -31,3 +31,7 @@ Maze.WAY = 1;
 Maze.INTERSECTION = 2;
 
 testMaze = new Maze(new Vec(5, 5));
+
+
+
+module.exports = Maze;
